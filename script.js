@@ -26,7 +26,10 @@ sizeButton.addEventListener('click', () => {
             square.style.height = `${percentageSize}%`;
 
             square.addEventListener('mouseenter', () => {
-                square.style.backgroundColor = 'Blue';
+                const r = Math.floor(Math.random() * 256);
+                const g = Math.floor(Math.random() * 256);
+                const b = Math.floor(Math.random() * 256);
+                square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
             });
 
             container.appendChild(square);  
