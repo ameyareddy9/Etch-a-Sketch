@@ -20,6 +20,20 @@ shadeInColorful.addEventListener('click', () => colorflag = true);
 inputs.appendChild(shadeInBlackAndWhite);
 inputs.appendChild(shadeInColorful);
 
+const showGrid = document.createElement("button");
+showGrid.textContent = "Show grid";
+showGrid.addEventListener('click', () => {
+    document.querySelectorAll(".gridPixel").forEach(sq => sq.style.border = "1px solid #ccc");
+});
+
+const hideGrid = document.createElement("button");
+hideGrid.textContent = "Hide grid";
+hideGrid.addEventListener('click', () => {
+    document.querySelectorAll(".gridPixel").forEach(sq => sq.style.border = "0px");
+});
+
+inputs.appendChild(showGrid);
+inputs.appendChild(hideGrid);
 
 sizeButton.addEventListener('click', () => {
     container.replaceChildren();
