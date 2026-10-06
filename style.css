@@ -1,0 +1,13 @@
+#container {
+    width: 532px;
+    height: 532px;
+    border: 2px solid black;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gridPixel {
+    border: 1px solid black;
+    box-sizing: border-box;
+}
