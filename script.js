@@ -25,11 +25,13 @@ sizeButton.addEventListener('click', () => {
             square.style.width = `${percentageSize}%`;
             square.style.height = `${percentageSize}%`;
 
+            let counter = 0;
             square.addEventListener('mouseenter', () => {
+                counter++;
                 const r = Math.floor(Math.random() * 256);
                 const g = Math.floor(Math.random() * 256);
                 const b = Math.floor(Math.random() * 256);
-                square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+                square.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${counter < 10 ? counter * 0.1 : 1})`;
             });
 
             container.appendChild(square);  
