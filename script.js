@@ -1,3 +1,4 @@
+alert("hover over a grid pixel multiple times to increase the opacity.");
 const inputs = document.querySelector("#inputs");
 const container = document.querySelector("#container");
 
@@ -5,6 +6,20 @@ let size = 16;
 
 const sizeButton = document.createElement("button");
 sizeButton.textContent = "Select grid size";
+
+let colorflag = false;
+
+const shadeInBlackAndWhite = document.createElement("button");
+shadeInBlackAndWhite.textContent = "Shade in Black and White";
+shadeInBlackAndWhite.addEventListener('click', () => colorflag = false);
+
+const shadeInColorful = document.createElement("button");
+shadeInColorful.textContent = "Shade in Randomised Colors";
+shadeInColorful.addEventListener('click', () => colorflag = true);
+
+inputs.appendChild(shadeInBlackAndWhite);
+inputs.appendChild(shadeInColorful);
+
 
 sizeButton.addEventListener('click', () => {
     container.replaceChildren();
@@ -28,10 +43,15 @@ sizeButton.addEventListener('click', () => {
             let counter = 0;
             square.addEventListener('mouseenter', () => {
                 counter++;
-                const r = Math.floor(Math.random() * 256);
-                const g = Math.floor(Math.random() * 256);
-                const b = Math.floor(Math.random() * 256);
-                square.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${counter < 10 ? counter * 0.1 : 1})`;
+                if(colorflag) {
+                    const r = Math.floor(Math.random() * 256);
+                    const g = Math.floor(Math.random() * 256);
+                    const b = Math.floor(Math.random() * 256);
+                    square.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${counter < 10 ? counter * 0.1 : 1})`;
+                }
+                else {
+                    square.style.backgroundColor = `rgba(0, 0, 0, ${counter < 10 ? counter * 0.1 : 1})`;
+                }
             });
 
             container.appendChild(square);  

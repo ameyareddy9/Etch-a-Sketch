@@ -13,9 +13,15 @@
     justify-self: center;
     margin: 30px;
     gap: 15px;
+    font-size: 22px;
 }
 
 .gridPixel {
     box-sizing: border-box;
     border: 0.25px solid grey;
+}
+
+button {
+    padding: 10px;
+    font-size: 15px;
 }
