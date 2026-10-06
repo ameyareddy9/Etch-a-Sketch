@@ -1,13 +1,20 @@
 #container {
-    width: 532px;
-    height: 532px;
+    width: 600px;
+    height: 600px;
     border: 2px solid black;
 
     display: flex;
     flex-wrap: wrap;
+    justify-self: center;
+}
+
+#inputs {
+    display: flex;
+    justify-self: center;
+    margin: 30px;
 }
 
 .gridPixel {
-    border: 1px solid black;
     box-sizing: border-box;
+    border: 0.25px solid grey;
 }
