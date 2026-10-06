@@ -9,7 +9,11 @@ for(let i = 0; i < size * size; ++i) {
     square.classList.add("gridPixel");
 
     square.style.width = `${percentageSize}%`;
-    square.style.height = `${percentageSize}%`
+    square.style.height = `${percentageSize}%`;
 
+    square.addEventListener('mouseenter', () => {
+        square.style.backgroundColor = 'Blue';
+    });
+    
     container.appendChild(square);  
 }
