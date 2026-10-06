@@ -23,7 +23,7 @@ inputs.appendChild(shadeInColorful);
 const showGrid = document.createElement("button");
 showGrid.textContent = "Show grid";
 showGrid.addEventListener('click', () => {
-    document.querySelectorAll(".gridPixel").forEach(sq => sq.style.border = "1px solid #ccc");
+    document.querySelectorAll(".gridPixel").forEach(sq => sq.style.border = "0.25px solid #ccc");
 });
 
 const hideGrid = document.createElement("button");
